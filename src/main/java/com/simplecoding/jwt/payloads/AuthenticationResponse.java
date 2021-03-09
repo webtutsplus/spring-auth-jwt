@@ -1,4 +1,4 @@
-package com.simplecoding.jwt;
+package com.simplecoding.jwt.payloads;
 
 public class AuthenticationResponse {
 

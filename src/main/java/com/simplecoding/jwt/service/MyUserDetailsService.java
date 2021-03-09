@@ -1,4 +1,4 @@
-package com.simplecoding.jwt;
+package com.simplecoding.jwt.service;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
