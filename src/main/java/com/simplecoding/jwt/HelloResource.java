@@ -29,6 +29,7 @@ public class HelloResource {
         return  "Nil here";
     }
 
+
     @PostMapping("/authenticate")
     public ResponseEntity<?> authenticate(@RequestBody AuthenticationRequest authenticationRequest) {
         Authentication authenticate = authenticationManager.authenticate(
