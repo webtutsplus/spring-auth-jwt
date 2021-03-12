@@ -40,8 +40,17 @@ public class AuthController {
     JwtUserRepository userRepository;
 
     @GetMapping("/hello")
-    public String hello(){
+    public String hello()
+    {
         return  "Nil here";
+    }
+
+
+    @GetMapping("/checkUser")
+    public String checkUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+        return  currentPrincipalName;
     }
 
     @PostMapping("/authenticate")
@@ -88,8 +97,6 @@ public class AuthController {
         // Creating user's account
         JwtUser jwtUser = new JwtUser();
         jwtUser.setEmail(signUpRequest.getEmail());
-        jwtUser.setFirstName("firstname");
-        jwtUser.setLastName("lastname");
         jwtUser.setPassword(passwordEncoder.encode(signUpRequest.getPassword()));
         userRepository.save(jwtUser);
         return ResponseEntity.ok(new ApiResponse(true, "User registered successfully"));
