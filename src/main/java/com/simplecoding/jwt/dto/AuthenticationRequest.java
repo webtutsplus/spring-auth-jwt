@@ -1,4 +1,4 @@
-package com.simplecoding.jwt;
+package com.simplecoding.jwt.dto;
 
 public class AuthenticationRequest {
     private String username;
